@@ -15,6 +15,7 @@ export const get = query({
       throw new Error("Unauthorized");
     }
 
+    // this will push favorites cards in favorites board section
     if (args.favorites) {
       const favoriteBoards = await ctx.db
         .query("userFavorites")
@@ -33,11 +34,12 @@ export const get = query({
         isFavorite: true,
       }));
     }
-
+    
     const title = args.search as string;
-
+    
     let boards = [];
-
+    
+    // ------------------ search bar functionality ------------------
     if (title) {
       boards = await ctx.db
         .query("boards")

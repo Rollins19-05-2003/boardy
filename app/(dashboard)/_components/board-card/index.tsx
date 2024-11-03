@@ -50,13 +50,11 @@ export function BoardCard({
 
   const toggleFavorite = () => {
     if (isFavorite) {
-      onUnfavorite({ id: id as Id<"boards"> }).catch(() =>
-        toast.error("Failed to unfavorite board")
-      );
+      onUnfavorite({ id: id as Id<"boards"> })
+      .catch(() => toast.error("Failed to unfavorite board"));
     } else {
-      onFavorite({ id: id as Id<"boards">, orgId }).catch(() =>
-        toast.error("Failed to favorite board")
-      );
+      onFavorite({ id: id as Id<"boards">, orgId })
+      .catch(() => toast.error("Failed to favorite board"));
     }
   };
 

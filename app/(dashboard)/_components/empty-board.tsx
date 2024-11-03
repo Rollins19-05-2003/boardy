@@ -18,8 +18,8 @@ export function EmptyBoards() {
     if (!organization) return;
 
     create({
-      title: "Untitled",
       orgId: organization.id,
+      title: "Untitled"
     })
       .then((id) => {
         toast.success("Board created");

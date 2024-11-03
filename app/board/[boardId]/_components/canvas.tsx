@@ -407,6 +407,10 @@ export const Canvas = ({ boardId }: CanvasProps) => {
 
             break;
           }
+
+        // case 'Backspace':
+        //   deleteLayers();
+        //   return;
       }
     }
 
